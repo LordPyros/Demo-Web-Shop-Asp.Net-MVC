@@ -1,0 +1,25 @@
+USE WebShopAppDB;
+
+DELETE FROM Products;
+GO
+
+INSERT INTO 
+Products(Id, Name, TypeOfProduct, Price, NumberInStock, Description, ImageUrl)
+VALUES
+('75157518-d4d4-456c-977c-bc71900f0888','Snickers', 'Chocolates', 59.99, 50, 'Packed with roasted peanuts, nougat, caramel and milk chocolate.', '/images/ChocolateBars/Snickers.jpg'), 
+('27a4a4e1-f96f-4953-b155-c33351133ff7','Mars Bars', 'Chocolates', 59.99, 40, 'Chocolate-malt nougat topped with a layer of caramel and covered with milk chocolate.', '/images/ChocolateBars/Mars.jpg'),
+('090259a3-733d-41ea-b91f-4953452d93ca','Picnic', 'Chocolates', 62.99, 28, 'Picnic is a brand of chocolate bar consisting of milk chocolate and peanuts, covering chewy nougat, caramel, biscuit and puffed rice.', '/images/ChocolateBars/Picnic.jpg'),
+('f1b5ff15-72dc-45fd-96b1-65337d0c35e6','Turkish Delight', 'Chocolates', 49.99, 63, 'Consists of a rose-flavoured Turkish delight surrounded by milk chocolate.', '/images/ChocolateBars/TurkishDelight.jpg'),
+('8aaf062f-5d9f-4796-9304-a19d21a15d32','Freddo Frogs', 'Chocolates', 45.99, 39, 'Freddo frogs have 72 x 12g cadbury plain chocolate freddos in a box.', '/images/ChocolateBars/Freddo.jpg'),
+('220880eb-521a-4310-b5f9-1dff7dd53cd1','Lays', 'Chips', 9.99, 42, 'Example Description', '/images/Chips/Lays.jpg'), 
+('0432191f-58a7-429c-8037-3bc679c10e76','Red Rock', 'Chips', 15.99, 33, 'Example Description', '/images/Chips/RedRock.jpg'),
+('768eefc4-19f0-40bc-b15d-09e94ddea462','Smiths', 'Chips', 11.99, 12, 'Example Description', '/images/Chips/Smiths.jpg'),
+('aef0bd44-f6a8-4205-9710-ece8871b11aa','Twisties', 'Chips', 11.49, 26, 'Example Description', '/images/Chips/Twisties.jpg'),
+('06d23f33-7fa2-483c-a400-041b5be1b5c8','Vege Chips', 'Chips', 18.49, 46, 'Example Description', '/images/Chips/Vege.jpg'),
+('cde28c65-a515-4f46-ab20-1615e2e5dff6','Strawberry Clouds', 'Lollies', 19.49, 63, 'Example Description', '/images/Lollies/Clouds.jpg'), 
+('8a300fed-7243-4062-aa16-2d6b14841a69','Gob Stoppers', 'Lollies', 24.99, 16, 'Example Description', '/images/Lollies/GobStoppers.jpg'),
+('6568f469-70d5-464a-84f1-cfaf398a5f72','Love Candy', 'Lollies', 22.99, 19, 'Example Description', '/images/Lollies/LoveCandy.jpg'),
+('16f51c1e-68a2-4257-b304-e5fe2fff6437','Push Pops', 'Lollies', 29.49, 29, 'Example Description', '/images/Lollies/PushPops.jpg'),
+('1421d503-ec65-4568-9e9d-baaefcfa88e7','Zappo', 'Lollies', 15.99, 71, 'Example Description', '/images/Lollies/Zappo.jpg'),
+('3ecde323-6621-4ce2-ad71-c66bafb5d08a','Sour Straps', 'Lollies', 9.49, 89, 'Example Description', '/images/Lollies/SourStraps.jpg');
+SELECT * FROM Products
