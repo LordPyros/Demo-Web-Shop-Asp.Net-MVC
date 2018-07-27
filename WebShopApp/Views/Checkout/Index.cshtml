@@ -1,7 +1,82 @@
-﻿
+﻿@model WebShopApp.Models.ProductIndexModel
 @{
     ViewData["Title"] = "Checkout";
 }
 
-<h2>Checkout</h2>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/js/Checkout.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <h2>Checkout</h2>
+    <b id="totalprice" style="float: right"></b>
+
+
+    <div>
+        <!--<form asp-controller="Products" asp-action="AddProductToCart" method="post">-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Products == null)
+                {
+                    <!-- Display a message about the cart being empty-->
+
+                }
+                else
+                {
+                    foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>
+                                @switch (product.TypeOfProduct)
+                                {
+                                    case "Chocolates":
+                                        <a asp-controller="Products" asp-action="Chocolates" asp-route-id="@product.Id">
+                                            <img src="@product.ImageUrl" />
+                                        </a>
+                                        break;
+                                    case "Chips":
+                                        <a asp-controller="Products" asp-action="Chips" asp-route-id="@product.Id">
+                                            <img src="@product.ImageUrl" />
+                                        </a>
+                                        break;
+                                    case "Lollies":
+                                        <a asp-controller="Products" asp-action="Lollies" asp-route-id="@product.Id">
+                                            <img src="@product.ImageUrl" />
+                                        </a>
+                                        break;
+                                }
+
+
+                            </td>
+                            <td>@product.Name</td>
+                            <td class="productprice">@product.Price</td>
+                            <td><button class="btn btn-default removefromcartbtn" type="submit" name="@product.Id" value="@product.Id">Remove From Cart</button></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+
+        <!--</form>-->
+    </div>
+    <script>
+        // get total of all products in cart
+        var total = 0;
+
+        $('.productprice').each(function () {
+            total += parseFloat($(this).text());
+            document.getElementById('totalprice').innerHTML = "TOTAL $" + total;
+        });
+    </script>
+</body>
 
